@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+ <h2>Select a Course</h2>
+        <form action="/submit" method="post">
+            <input name='name' type='text' placeholder='Your Name'>
+            <input name='roll' type='text' placeholder='Your Roll Number'>
+            <input name='number' type='text' placeholder='Your Phone Number'>
+            <input name='email' type='email' placeholder='Your email'>
+            <input name='address' type='text' placeholder='Your address'>
+            <select name='stream'>
+                <option disabled selected value=''>Select a branch</option>
+                {% for branch in branches %}
+                    <option value="{{ branch }}">{{ branch }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value+"Submit">
+        </form>
+
+{% endblock %}
